@@ -1,0 +1,82 @@
+1 etap 
+from pradziadek import Pradziadek
+from dziadek import dziadek
+from tata import tata
+from syn import syn
+from córka import curka
+
+pra = Pradziadek("dobra pomidorowa")
+dzia = dziadek("dobra pomidorowa" , "niezły schabowy")
+tat = tata("dobra pomidorowa" , "niezły schabowy" , "pyszny rosół")
+sy = syn("dobra pomidorowa" , "niezły schabowy" , "pyszny rosół" , "fajne spaghetti")
+cu = curka("dobra pomidorowa" , "niezły schabowy" , "pyszny rosół" , "fajne spaghetti" , "wykwintny kurczak")
+
+pra.pomidorowa()
+dzia.schab()
+tat.zupka()
+sy.makaron()
+cu.kura()
+
+
+
+2 etap
+class Pradziadek():
+   
+    def  __init__(self, pomidorowa):
+        self.pomiforowa = pomidorowa 
+    
+    def inf(self):
+        print(f"pomidorowa {self.pomidorowa}")
+
+    def pomidorowa(self):
+        print("gotuje pomidorową")
+        
+        
+        
+3 etap
+from pradziadek import Pradziadek
+
+class dziadek(Pradziadek):
+    def  __init__(self, pomidorowa, schabowy):
+        super().__init__(pomidorowa)
+        self.schabowy = schabowy
+    
+    def schab(self):
+        print("gotuje schab")
+
+
+4 etap 
+from dziadek import dziadek
+
+class tata(dziadek):
+    def  __init__(self, pomidorowa, schabowy, rosol):
+        super().__init__(pomidorowa, schabowy)
+        self.rosol = rosol
+    
+    def zupka(self):
+        print("gotuje rosol")
+       
+       
+
+5 etap
+from tata import tata
+
+class syn(tata):
+    def  __init__(self, pomidorowa, schabowy, rosol, spaghetti):
+        super().__init__(pomidorowa, schabowy, rosol)
+        self.spaghetti = spaghetti
+    
+    def makaron(self):
+        print("robie spaghetti")
+        
+        
+6 etap
+from syn import syn
+
+class curka(syn):
+    def  __init__(self, pomidorowa, schabowy, rosol, spaghetti, kurczak):
+        super().__init__(pomidorowa, schabowy, rosol, spaghetti)
+        self.kurczak = kurczak
+    
+    def kura(self):
+        print("gotuje kurczaka")
